@@ -121,9 +121,10 @@ namespace VehicleRegistrationApplication
             {
                 listBoxDisplay.SetSelected(listBoxDisplay.SelectedIndex, true);
                 PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
-                statusLabel.Text = "Number plate deleted";
                 ApplicationUtility();
                 DisplayList();
+                statusLabel.Text = "Number plate deleted";
+                
             }
             else if (isEmpty)
             {
@@ -180,8 +181,8 @@ namespace VehicleRegistrationApplication
                 PlateList[listBoxDisplay.SelectedIndex] = textBoxInput.Text;
                 textBoxInput.Text = listBoxDisplay.SelectedIndex.ToString();
                 ApplicationUtility();
-                DisplayList();
                 statusLabel.Text = "Number plate edited";
+                DisplayList();
             }
             else
             {
