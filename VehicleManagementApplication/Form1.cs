@@ -23,6 +23,7 @@ namespace VehicleRegistrationApplication
 
         List<string> PlateList = new List<string>();
         string currentFileName = "";
+
         #endregion
         #region Open Text File
 
@@ -89,7 +90,6 @@ namespace VehicleRegistrationApplication
                 return true;
             }
         }
-
         #endregion  
         #region Add button
         private void ButtonAdd_Click(object sender, EventArgs e)
@@ -110,7 +110,6 @@ namespace VehicleRegistrationApplication
             {
                 statusLabel.Text = "Cannot add a duplicate number plate in the list";
             }
-            ApplicationUtility();
         }
         #endregion
         #region Delete Button
@@ -122,8 +121,8 @@ namespace VehicleRegistrationApplication
             {
                 listBoxDisplay.SetSelected(listBoxDisplay.SelectedIndex, true);
                 PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
-                ApplicationUtility();
                 statusLabel.Text = "Number plate deleted";
+                ApplicationUtility();
                 DisplayList();
             }
             else if (isEmpty)
