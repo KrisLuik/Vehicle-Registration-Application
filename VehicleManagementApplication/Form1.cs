@@ -29,7 +29,7 @@ namespace VehicleRegistrationApplication
         private void ButtonOpen_Click(object sender, EventArgs e)
         {
             statusLabel.Text = "";
-            string fileName = "demo_01.txt";
+            string fileName = "demo_00.txt";
             OpenFileDialog OpenText = new OpenFileDialog();
             OpenText.InitialDirectory = Path.GetDirectoryName(Application.ExecutablePath);
             OpenText.Filter = "Txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -60,7 +60,7 @@ namespace VehicleRegistrationApplication
         #region Save Button
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            string fileName = "demo_01.txt";
+            string fileName = "demo_00.txt";
             SaveFileDialog SaveText = new SaveFileDialog();
             SaveText.InitialDirectory = Path.GetDirectoryName(Application.ExecutablePath);
             SaveText.Filter = "Txt files (*.txt)|*.txt|All files (*.*)|*.*";
@@ -123,8 +123,8 @@ namespace VehicleRegistrationApplication
                 listBoxDisplay.SetSelected(listBoxDisplay.SelectedIndex, true);
                 PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
                 ApplicationUtility();
-                DisplayList();
                 statusLabel.Text = "Number plate deleted";
+                DisplayList();
             }
             else if (isEmpty)
             {
@@ -134,7 +134,6 @@ namespace VehicleRegistrationApplication
             {
                 statusLabel.Text = "Please select a number to delete";
             }
-            ApplicationUtility();
         }
 
         #endregion
@@ -143,10 +142,6 @@ namespace VehicleRegistrationApplication
         {
             try
             {
-                PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
-                ApplicationUtility();
-                DisplayList();
-                statusLabel.Text = "Number plate removed";
                 listBoxDisplay.SetSelected(listBoxDisplay.SelectedIndex, true);
                 string message = "Do you want to remove the number plate from the list?";
                 string title = "Close Window";
@@ -174,16 +169,12 @@ namespace VehicleRegistrationApplication
             {
                 statusLabel.Text = "Please select a number plate to delete";
             }
-            ApplicationUtility();
         }
-
         #endregion
         #region Edit Button
 
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
-            // error trapping if null or empty whitespace
-            // no duplicates
             statusLabel.Text = "";
             if (listBoxDisplay.SelectedIndex != -1)
             {
@@ -213,7 +204,6 @@ namespace VehicleRegistrationApplication
         private void ListBoxDisplay_MouseClick(object sender, MouseEventArgs e)
         {
             statusLabel.Text = "";
-            bool isEmpty = !PlateList.Any();
             if (listBoxDisplay.SelectedIndex != -1)
             {
                 string dataItem = listBoxDisplay.SelectedItem.ToString();
@@ -221,7 +211,7 @@ namespace VehicleRegistrationApplication
                 textBoxInput.Text = PlateList[dataItemIndex].ToString();
                 ApplicationUtility();
             }
-            else if (isEmpty)
+            else
             {
                 statusLabel.Text = "List box is empty, add a number plate";
             }
@@ -312,7 +302,6 @@ namespace VehicleRegistrationApplication
                 statusLabel.Text = "test";
             }
         }
-
         #endregion
         #region Save Text File Method
         private void SaveTextFile(string fileName)
@@ -335,10 +324,8 @@ namespace VehicleRegistrationApplication
         }
         #endregion
         #region Form Closed
-
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Pop-up msg asking if you want to override a file
             try
             {
                 int num = int.Parse(Path.GetFileNameWithoutExtension(currentFileName).Remove(0, 5));
@@ -354,8 +341,7 @@ namespace VehicleRegistrationApplication
                 }
                 String newFileName = "demo_" + newValue + ".txt";
                 SaveTextFile(newFileName);
-            } 
-            
+            }
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("Try again");
@@ -381,10 +367,8 @@ namespace VehicleRegistrationApplication
         {
             textBoxInput.Clear();
             textBoxInput.Focus();
-
         }
         #endregion
-
         #region Input Handling
         private void TextBoxInput_KeyPress(object sender, KeyPressEventArgs e)
         {
