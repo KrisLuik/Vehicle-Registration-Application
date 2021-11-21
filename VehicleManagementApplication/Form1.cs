@@ -14,12 +14,12 @@ namespace VehicleRegistrationApplication
 {
     public partial class Form1 : System.Windows.Forms.Form
     {
+        #region Properties
         public Form1()
         {
             InitializeComponent();
         }
-        #region PlateList 
-
+        
         List<string> PlateList = new List<string>();
         string currentFileName = "";
 
