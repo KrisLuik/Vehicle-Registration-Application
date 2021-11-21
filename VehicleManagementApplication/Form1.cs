@@ -21,7 +21,7 @@ namespace VehicleRegistrationApplication
         }
         
         List<string> PlateList = new List<string>();
-        string currentFileName = "";
+        string currentFileName = "demo_00.txt";
 
         #endregion
         #region Open Text File
