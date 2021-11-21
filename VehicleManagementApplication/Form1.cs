@@ -355,7 +355,7 @@ namespace VehicleRegistrationApplication
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("Add number plates to the list and then try again");
+                MessageBox.Show("");
             }
             catch
             {
