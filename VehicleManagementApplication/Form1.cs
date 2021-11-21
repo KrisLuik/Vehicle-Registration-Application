@@ -166,18 +166,26 @@ namespace VehicleRegistrationApplication
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             statusLabel.Text = "";
-            if (listBoxDisplay.SelectedIndex != -1)
+            if (listBoxDisplay.Items.Count < 0)
             {
-                PlateList[listBoxDisplay.SelectedIndex] = textBoxInput.Text;
-                textBoxInput.Text = listBoxDisplay.SelectedIndex.ToString();
-                ApplicationUtility();
-                statusLabel.Text = "Number plate edited";
-                DisplayList();
+                if (listBoxDisplay.SelectedIndex != -1)
+                {
+                    PlateList[listBoxDisplay.SelectedIndex] = textBoxInput.Text;
+                    textBoxInput.Text = listBoxDisplay.SelectedIndex.ToString();
+                    ApplicationUtility();
+                    statusLabel.Text = "Number plate edited";
+                    DisplayList();
+                }
+                else
+                {
+                    statusLabel.Text = "Please select a number plate to edit from the list box";
+                }
             }
             else
             {
-                statusLabel.Text = "Please select a number plate to edit from the list box";
+                statusLabel.Text = "List box is empty, add number plate(s) first";
             }
+
         }
         #endregion
         #region  Reset Button
