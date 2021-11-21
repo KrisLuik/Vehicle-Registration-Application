@@ -209,7 +209,7 @@ namespace VehicleRegistrationApplication
                 string dataItem = listBoxDisplay.SelectedItem.ToString();
                 int dataItemIndex = listBoxDisplay.FindString(dataItem);
                 textBoxInput.Text = PlateList[dataItemIndex].ToString();
-                ApplicationUtility();
+                textBoxInput.Select();
             }
             else
             {
@@ -221,7 +221,6 @@ namespace VehicleRegistrationApplication
         private void ButtonBinary_Click(object sender, EventArgs e)
         {
             PlateList.Sort();
-            // built-in bin search - needs try catch & error messages
             if (PlateList.BinarySearch(textBoxInput.Text) >= 0)
             {
                 MessageBox.Show("Number plate found");
@@ -255,7 +254,6 @@ namespace VehicleRegistrationApplication
                     statusLabel.Text = "Number plate not found";
                     ApplicationUtility();
                     DisplayList();
-
                 }
         }
         #endregion
