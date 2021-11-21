@@ -18,7 +18,6 @@ namespace VehicleRegistrationApplication
         {
             InitializeComponent();
         }
-
         #region PlateList 
 
         List<string> PlateList = new List<string>();
@@ -26,7 +25,6 @@ namespace VehicleRegistrationApplication
 
         #endregion
         #region Open Text File
-
         private void ButtonOpen_Click(object sender, EventArgs e)
         {
             statusLabel.Text = "";
@@ -76,7 +74,6 @@ namespace VehicleRegistrationApplication
             }
             SaveTextFile(fileName);
         }
-
         #endregion
         #region Valid Plate Method 
         private bool ValidPlate(string a)
@@ -123,7 +120,7 @@ namespace VehicleRegistrationApplication
                 PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
                 ApplicationUtility();
                 DisplayList();
-                statusLabel.Text = "Number plate deleted";     
+                statusLabel.Text = "Number plate deleted";
             }
             else if (isEmpty)
             {
@@ -238,7 +235,7 @@ namespace VehicleRegistrationApplication
         {
             string targetValue = textBoxInput.Text;
             for (int i = 0; i < PlateList.Count; i++)
-
+            {
                 if (PlateList[i] == targetValue)
                 {
                     statusLabel.Text = "Number plate found at index " + i;
@@ -255,6 +252,7 @@ namespace VehicleRegistrationApplication
                     ApplicationUtility();
                     DisplayList();
                 }
+            }
         }
         #endregion
         #region Tag Button
