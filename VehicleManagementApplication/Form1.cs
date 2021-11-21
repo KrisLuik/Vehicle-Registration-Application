@@ -339,23 +339,23 @@ namespace VehicleRegistrationApplication
         {
             try
             {
-                int num = int.Parse(Path.GetFileNameWithoutExtension(currentFileName).Remove(0, 5));
-                num++;
+                int textFileNumber = int.Parse(Path.GetFileNameWithoutExtension(currentFileName).Remove(0, 5));
+                textFileNumber++;
                 String newValue;
-                if (num <= 9)
+                if (textFileNumber <= 9)
                 {
-                    newValue = "0" + num.ToString();
+                    newValue = "0" + textFileNumber.ToString();
                 }
                 else
                 {
-                    newValue = num.ToString();
+                    newValue = textFileNumber.ToString();
                 }
                 String newFileName = "demo_" + newValue + ".txt";
                 SaveTextFile(newFileName);
             }
             catch (ArgumentOutOfRangeException)
             {
-                MessageBox.Show("");
+                MessageBox.Show("Please try again!");
             }
             catch
             {
