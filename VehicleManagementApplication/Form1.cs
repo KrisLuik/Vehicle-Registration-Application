@@ -104,7 +104,7 @@ namespace VehicleRegistrationApplication
             }
             else if (string.IsNullOrWhiteSpace(textBoxInput.Text))
             {
-                statusLabel.Text = "Write a rego number in the text box to add it in the list";
+                statusLabel.Text = "Write a rego number in the text box to add it on the list";
             }
             else
             {
@@ -123,8 +123,7 @@ namespace VehicleRegistrationApplication
                 PlateList.RemoveAt(listBoxDisplay.SelectedIndex);
                 ApplicationUtility();
                 DisplayList();
-                statusLabel.Text = "Number plate deleted";
-                
+                statusLabel.Text = "Number plate deleted";     
             }
             else if (isEmpty)
             {
@@ -135,7 +134,6 @@ namespace VehicleRegistrationApplication
                 statusLabel.Text = "Please select a number to delete";
             }
         }
-
         #endregion
         #region Double-Click Remove Button
         private void ListBoxDisplay_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -156,18 +154,14 @@ namespace VehicleRegistrationApplication
                     DisplayList();
                     statusLabel.Text = "Number plate removed";
                 }
-                else if (isEmpty)
-                {
-                    statusLabel.Text = "List box is empty, add a number plate";
-                }
                 else
                 {
-                    statusLabel.Text = "Please select a number to delete";
+                    statusLabel.Text = "You haven't selected a number plate to delete";
                 }
             }
             catch (ArgumentOutOfRangeException)
             {
-                statusLabel.Text = "Please select a number plate to delete";
+                statusLabel.Text = "List box is empty, add data first";
             }
         }
         #endregion
