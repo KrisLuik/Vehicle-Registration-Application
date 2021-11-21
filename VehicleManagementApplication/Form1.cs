@@ -234,24 +234,31 @@ namespace VehicleRegistrationApplication
         private void ButtonLinear_Click(object sender, EventArgs e)
         {
             string targetValue = textBoxInput.Text;
-            for (int i = 0; i < PlateList.Count; i++)
+            if (listBoxDisplay.Items.Count > 0)
             {
-                if (PlateList[i] == targetValue)
+                for (int i = 0; i < PlateList.Count; i++)
                 {
-                    statusLabel.Text = "Number plate found at index " + i;
-                    listBoxDisplay.SelectedIndex = i;
-                    return;
+                    if (PlateList[i] == targetValue)
+                    {
+                        statusLabel.Text = "Number plate found at index " + i;
+                        listBoxDisplay.SelectedIndex = i;
+                        return;
+                    }
+                    else if (textBoxInput.Text == "")
+                    {
+                        statusLabel.Text = "Select a number to search";
+                    }
+                    else
+                    {
+                        statusLabel.Text = "Number plate not found";
+                        ApplicationUtility();
+                        DisplayList();
+                    }
                 }
-                else if (textBoxInput.Text == "")
-                {
-                    statusLabel.Text = "Select a number to search";
-                }
-                else
-                {
-                    statusLabel.Text = "Number plate not found";
-                    ApplicationUtility();
-                    DisplayList();
-                }
+            }
+            else
+            {
+                statusLabel.Text = "List box is empty, add number plate(s) first";
             }
         }
         #endregion
