@@ -51,7 +51,7 @@ namespace VehicleRegistrationApplication
             // ButtonTag
             // 
             this.ButtonTag.Location = new System.Drawing.Point(208, 44);
-            this.ButtonTag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonTag.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonTag.Name = "ButtonTag";
             this.ButtonTag.Size = new System.Drawing.Size(94, 42);
             this.ButtonTag.TabIndex = 0;
@@ -63,7 +63,7 @@ namespace VehicleRegistrationApplication
             // ButtonOpen
             // 
             this.ButtonOpen.Location = new System.Drawing.Point(208, 115);
-            this.ButtonOpen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonOpen.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonOpen.Name = "ButtonOpen";
             this.ButtonOpen.Size = new System.Drawing.Size(94, 42);
             this.ButtonOpen.TabIndex = 1;
@@ -75,7 +75,7 @@ namespace VehicleRegistrationApplication
             // ButtonSave
             // 
             this.ButtonSave.Location = new System.Drawing.Point(208, 157);
-            this.ButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(94, 42);
             this.ButtonSave.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace VehicleRegistrationApplication
             // ButtonAdd
             // 
             this.ButtonAdd.Location = new System.Drawing.Point(208, 199);
-            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonAdd.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonAdd.Name = "ButtonAdd";
             this.ButtonAdd.Size = new System.Drawing.Size(94, 42);
             this.ButtonAdd.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace VehicleRegistrationApplication
             // ButtonEdit
             // 
             this.ButtonEdit.Location = new System.Drawing.Point(302, 115);
-            this.ButtonEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonEdit.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonEdit.Name = "ButtonEdit";
             this.ButtonEdit.Size = new System.Drawing.Size(94, 42);
             this.ButtonEdit.TabIndex = 4;
@@ -111,7 +111,7 @@ namespace VehicleRegistrationApplication
             // ButtonLinear
             // 
             this.ButtonLinear.Location = new System.Drawing.Point(302, 157);
-            this.ButtonLinear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonLinear.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonLinear.Name = "ButtonLinear";
             this.ButtonLinear.Size = new System.Drawing.Size(94, 42);
             this.ButtonLinear.TabIndex = 5;
@@ -123,7 +123,7 @@ namespace VehicleRegistrationApplication
             // ButtonBinary
             // 
             this.ButtonBinary.Location = new System.Drawing.Point(302, 199);
-            this.ButtonBinary.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonBinary.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonBinary.Name = "ButtonBinary";
             this.ButtonBinary.Size = new System.Drawing.Size(94, 42);
             this.ButtonBinary.TabIndex = 6;
@@ -135,7 +135,7 @@ namespace VehicleRegistrationApplication
             // ButtonReset
             // 
             this.ButtonReset.Location = new System.Drawing.Point(302, 241);
-            this.ButtonReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonReset.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonReset.Name = "ButtonReset";
             this.ButtonReset.Size = new System.Drawing.Size(94, 42);
             this.ButtonReset.TabIndex = 7;
@@ -147,7 +147,7 @@ namespace VehicleRegistrationApplication
             // ButtonDelete
             // 
             this.ButtonDelete.Location = new System.Drawing.Point(208, 241);
-            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonDelete.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonDelete.Name = "ButtonDelete";
             this.ButtonDelete.Size = new System.Drawing.Size(94, 42);
             this.ButtonDelete.TabIndex = 8;
@@ -159,7 +159,8 @@ namespace VehicleRegistrationApplication
             // textBoxInput
             // 
             this.textBoxInput.Location = new System.Drawing.Point(9, 11);
-            this.textBoxInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxInput.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxInput.MaxLength = 8;
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(371, 20);
             this.textBoxInput.TabIndex = 0;
@@ -169,7 +170,7 @@ namespace VehicleRegistrationApplication
             // tagTextBoxOutput
             // 
             this.tagTextBoxOutput.Location = new System.Drawing.Point(303, 45);
-            this.tagTextBoxOutput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tagTextBoxOutput.Margin = new System.Windows.Forms.Padding(2);
             this.tagTextBoxOutput.Multiline = true;
             this.tagTextBoxOutput.Name = "tagTextBoxOutput";
             this.tagTextBoxOutput.ReadOnly = true;
@@ -181,7 +182,7 @@ namespace VehicleRegistrationApplication
             // 
             this.listBoxDisplay.FormattingEnabled = true;
             this.listBoxDisplay.Location = new System.Drawing.Point(9, 45);
-            this.listBoxDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxDisplay.Name = "listBoxDisplay";
             this.listBoxDisplay.Size = new System.Drawing.Size(197, 238);
             this.listBoxDisplay.TabIndex = 11;
@@ -225,7 +226,7 @@ namespace VehicleRegistrationApplication
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonOpen);
             this.Controls.Add(this.ButtonTag);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Vehicle Registration Management";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
