@@ -166,7 +166,6 @@ namespace VehicleRegistrationApplication
         }
         #endregion
         #region Edit Button
-
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             statusLabel.Text = "";
@@ -219,6 +218,14 @@ namespace VehicleRegistrationApplication
             {
                 MessageBox.Show("Number plate found");
             }
+            else if (listBoxDisplay.Items.Count == 0)
+            {
+                MessageBox.Show("List box is empty, add number plate(s) first");
+            }
+            else if (listBoxDisplay.Items.Count > 0 && textBoxInput.Text == "")
+            {
+                MessageBox.Show("Select a number plate to search");
+            }
             else
             {
                 MessageBox.Show("Number plate not found");
@@ -237,7 +244,6 @@ namespace VehicleRegistrationApplication
                     statusLabel.Text = "Number plate found at index " + i;
                     listBoxDisplay.SelectedIndex = i;
                     return;
-
                 }
                 else if (textBoxInput.Text == "")
                 {
