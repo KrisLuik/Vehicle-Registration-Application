@@ -253,7 +253,7 @@ namespace VehicleRegistrationApplication
                         listBoxDisplay.SelectedIndex = i;
                         return;
                     }
-                    else if (textBoxInput.Text == "")
+                    else if (String.IsNullOrEmpty(textBoxInput.Text))
                     {
                         statusLabel.Text = "Select a number to search";
                     }
