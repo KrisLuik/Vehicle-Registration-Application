@@ -166,13 +166,14 @@ namespace VehicleRegistrationApplication
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             statusLabel.Text = "";
-            if (listBoxDisplay.Items.Count < 0)
+            if (listBoxDisplay.Items.Count < 0 || listBoxDisplay.SelectedIndex > 0)
             {
                 if (listBoxDisplay.SelectedIndex != -1)
                 {
                     PlateList[listBoxDisplay.SelectedIndex] = textBoxInput.Text;
-                    textBoxInput.Text = listBoxDisplay.SelectedIndex.ToString();
-                    ApplicationUtility();
+                    textBoxInput.Text = listBoxDisplay.SelectedItem.ToString();
+                    listBoxDisplay.FindString(textBoxInput.Text);
+                    textBoxInput.Clear();
                     statusLabel.Text = "Number plate edited";
                     DisplayList();
                 }
@@ -180,13 +181,13 @@ namespace VehicleRegistrationApplication
                 {
                     statusLabel.Text = "Please select a number plate to edit from the list box";
                 }
-            }
+        }
             else
             {
                 statusLabel.Text = "List box is empty, add number plate(s) first";
             }
 
-        }
+}
         #endregion
         #region  Reset Button
         private void ButtonReset_Click(object sender, EventArgs e)
@@ -207,7 +208,7 @@ namespace VehicleRegistrationApplication
                 string dataItem = listBoxDisplay.SelectedItem.ToString();
                 int dataItemIndex = listBoxDisplay.FindString(dataItem);
                 textBoxInput.Text = PlateList[dataItemIndex].ToString();
-                textBoxInput.Select();
+                textBoxInput.Focus();
             }
             else
             {
