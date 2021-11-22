@@ -112,7 +112,7 @@ namespace VehicleRegistrationApplication
         #region Delete Button
         private void ButtonDelete_Click(object sender, EventArgs e)
         {
-            statusStripMessage.Text = "";
+            statusLabel.Text = "";
             bool isEmpty = !PlateList.Any();
             if (listBoxDisplay.SelectedIndex != -1)
             {
@@ -310,7 +310,7 @@ namespace VehicleRegistrationApplication
             }
             catch (IndexOutOfRangeException)
             {
-                statusLabel.Text = "test";
+                statusLabel.Text = "Error! Try again";
             }
         }
         #endregion
